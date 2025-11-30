@@ -1,92 +1,485 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chaos To-Do List ✨</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Viviane Furtado – UX & Product Witch</title>
+  <meta name="description" content="Viviane Furtado – UX & Product, communication expert, gamer witch transitioning into tech." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Nunito:wght@400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-  <!-- Floating decorations -->
-  <div class="sparkle sparkle-1">✨</div>
-  <div class="sparkle sparkle-2">🌙</div>
-  <div class="sparkle sparkle-3">💜</div>
-  <div class="sparkle sparkle-4">⭐</div>
+<body class="theme-night">
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-  <div class="container">
-    <!-- Header -->
-    <header>
-      <h1>Chaos To-Do List <span class="chaos-icon">🌀</span></h1>
-      <p class="subtitle">Organize your beautiful chaos</p>
-    </header>
+  <header class="site-header">
+    <div class="shell">
+      <div class="header-inner">
+        <div class="brand">
+          <div class="avatar-circle" aria-hidden="true">
+            <div class="witch-hat"></div>
+          </div>
+          <div class="brand-text">
+            <span class="brand-name">Viviane Furtado</span>
+            <span class="brand-tagline">UX & Product • Gamer Witch in Tech</span>
+          </div>
+        </div>
 
-    <!-- Stats -->
-    <div class="stats">
-      <div class="stat-card">
-        <span class="stat-number" id="total-tasks">0</span>
-        <span class="stat-label">Total Tasks</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-number" id="completed-tasks">0</span>
-        <span class="stat-label">Completed</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-number" id="remaining-tasks">0</span>
-        <span class="stat-label">Remaining</span>
-      </div>
-    </div>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
 
-    <!-- Add Task Form -->
-    <div class="add-task-section">
-      <div class="input-group">
-        <input 
-          type="text" 
-          id="task-input" 
-          placeholder="What needs to be done?" 
-          maxlength="200"
-        />
-        <select id="priority-select">
-          <option value="low">Low Priority</option>
-          <option value="medium" selected>Medium Priority</option>
-          <option value="high">High Priority</option>
-        </select>
-        <button id="add-task-btn" class="btn btn-purple">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10 4v12M4 10h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-          Add Task
+        <nav class="site-nav" aria-label="Main navigation">
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#case-studies">Case Studies</a></li>
+            <li><a href="#dev-lab">Dev Lab</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <button class="theme-toggle" type="button" aria-label="Toggle day/night theme">
+          <span class="theme-icon theme-icon--moon" aria-hidden="true">🌙</span>
+          <span class="theme-icon theme-icon--sun" aria-hidden="true">☀️</span>
         </button>
       </div>
     </div>
+  </header>
 
-    <!-- Filter buttons -->
-    <div class="filter-section">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="active">Active</button>
-      <button class="filter-btn" data-filter="completed">Completed</button>
-      <button class="filter-btn" data-filter="high">High Priority</button>
-    </div>
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="shell">
+        <div class="hero-grid">
+          <div class="hero-text">
+            <p class="hero-kicker">Product • UX • Communication</p>
+            <h1>
+              I turn <span class="highlight">messy ideas</span><br />
+              into <span class="highlight">playable stories</span>.
+            </h1>
+            <p class="hero-body">
+              UX & product generalist with 10+ years of corporate communication
+              (BASF, Volkswagen, Mercedes-Benz) now designing inclusive, game-inspired
+              digital experiences. I speak 5 languages and build products that even
+              anxious humans aren’t afraid to touch.
+            </p>
 
-    <!-- Tasks List -->
-    <div class="tasks-container">
-      <div id="tasks-list"></div>
-      
-      <!-- Empty state -->
-      <div id="empty-state" class="empty-state">
-        <div class="empty-icon">🎯</div>
-        <h3>No tasks yet!</h3>
-        <p>Add your first task to tame the chaos</p>
+            <div class="hero-actions">
+              <a href="#case-studies" class="btn btn-primary">View case studies</a>
+              <a href="#contact" class="btn btn-ghost">Let’s work together</a>
+            </div>
+
+            <ul class="hero-meta">
+              <li>🎮 2D gamer witch aesthetic</li>
+              <li>🌍 EN • PT • ES • FR • IT</li>
+              <li>📍 São Paulo • Open to remote</li>
+            </ul>
+          </div>
+
+          <div class="hero-visual" aria-hidden="true">
+            <div class="witch-card">
+              <div class="witch-sprite">
+                <div class="witch-body"></div>
+                <div class="witch-broom"></div>
+              </div>
+              <div class="witch-glow"></div>
+              <div class="floating-tag floating-tag--top-left">UX Research</div>
+              <div class="floating-tag floating-tag--top-right">Product Strategy</div>
+              <div class="floating-tag floating-tag--bottom-left">Accessibility</div>
+              <div class="floating-tag floating-tag--bottom-right">Storytelling</div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+      <div class="hero-stars" aria-hidden="true"></div>
+    </section>
 
-    <!-- Clear completed button -->
-    <div class="actions">
-      <button id="clear-completed-btn" class="btn btn-outline">
-        Clear Completed Tasks
-      </button>
+    <!-- ABOUT -->
+    <section id="about" class="section section--light">
+      <div class="shell">
+        <header class="section-header">
+          <h2>About this witch</h2>
+          <p>Transitioning from classrooms & boardrooms into tech – without leaving my spellbook behind.</p>
+        </header>
+
+        <div class="about-grid">
+          <article class="card">
+            <h3>From executives to interfaces</h3>
+            <p>
+              For a decade I trained executives at BASF, Volkswagen, Mercedes-Benz and C.Café
+              to communicate clearly across cultures. Now I use the same precision to design
+              products where information flows, not fights.
+            </p>
+            <p>
+              My strengths live where <strong>strategy, language, and empathy</strong> meet:
+              I align stakeholders, translate business goals into UX decisions, and write
+              interfaces that feel human.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>What I focus on</h3>
+            <ul class="pill-list">
+              <li>Product discovery & problem framing</li>
+              <li>UX research & inclusive design</li>
+              <li>Information architecture & flows</li>
+              <li>UX writing & technical documentation</li>
+              <li>Light frontend prototyping (HTML, CSS, JS, React basics)</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>How I work</h3>
+            <p>
+              I approach every project like a game level: understand the map,
+              meet the player where they are, and design the path that feels
+              both intuitive and rewarding.
+            </p>
+            <p>
+              I am still growing as a developer, but I already bring senior-level
+              communication, teaching, and documentation skills to any product team.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CASE STUDIES -->
+    <section id="case-studies" class="section">
+      <div class="shell">
+        <header class="section-header">
+          <h2>Case studies</h2>
+          <p>Not just “projects” – stories of how I think, decide, and design under pressure.</p>
+        </header>
+
+        <div class="case-grid">
+          <!-- FinanceHub -->
+          <article class="case-card">
+            <header>
+              <span class="case-label">Hackathon • Product & UX</span>
+              <h3>FinanceHub Melhor Idade</h3>
+            </header>
+            <p class="case-summary">
+              48-hour hackathon project creating a financial-education + AI platform
+              for Brazilian seniors (60+). I led product strategy, UX flows, and the pitch.
+            </p>
+            <dl class="case-meta-list">
+              <div>
+                <dt>Role</dt>
+                <dd>Product strategy, UX, storytelling</dd>
+              </div>
+              <div>
+                <dt>Team</dt>
+                <dd>3 students • FIAM-FAAM Hackathon 2025</dd>
+              </div>
+              <div>
+                <dt>Focus</dt>
+                <dd>Onboarding, trust, accessibility, clarity</dd>
+              </div>
+            </dl>
+            <button class="case-toggle" type="button" aria-expanded="false">
+              Read the case study
+            </button>
+            <div class="case-details" hidden>
+              <h4>Problem</h4>
+              <p>
+                Seniors in Brazil face aggressive financial offers, low digital confidence,
+                and complex banking interfaces. The challenge: design an experience that
+                teaches, protects, and empowers – not overwhelms.
+              </p>
+              <h4>Approach</h4>
+              <ul>
+                <li>Mapped a simple end-to-end journey: “curious” → “confident decision”.</li>
+                <li>Created personas representing different confidence / tech levels.</li>
+                <li>Designed a <strong>learning-first dashboard</strong> with clear language,
+                    large tap targets, and step-by-step flows.</li>
+                <li>Used an AI assistant as a “patient financial coach”, not a chatbot wall.</li>
+              </ul>
+              <h4>Outcome & learnings</h4>
+              <p>
+                We delivered a functional prototype and pitch in 48 hours. My key learning:
+                <strong>trust is the primary UX metric for seniors</strong> – every decision
+                must lower anxiety, not increase it. This project confirmed that my background
+                in teaching and communication is a superpower in product design.
+              </p>
+              <p class="case-links">
+                <span>Links:</span>
+                <a href="https://github.com/vivisillusion/hackathonfmu2025" target="_blank" rel="noopener noreferrer">GitHub repo</a>
+                <span aria-hidden="true">•</span>
+                <a href="#" aria-disabled="true" class="link-disabled">Prototype (coming soon)</a>
+              </p>
+            </div>
+          </article>
+
+          <!-- Chaos Cookbook -->
+          <article class="case-card">
+            <header>
+              <span class="case-label">Personal • UX & Frontend</span>
+              <h3>My Chaos Cookbook</h3>
+            </header>
+            <p class="case-summary">
+              A cozy recipe site designed for neurodivergent, anxious cooks who need
+              clear steps, minimal clutter, and reassurance – not food-blog chaos.
+            </p>
+            <dl class="case-meta-list">
+              <div>
+                <dt>Role</dt>
+                <dd>UX, content design, frontend</dd>
+              </div>
+              <div>
+                <dt>Stack</dt>
+                <dd>Semantic HTML, CSS, vanilla JS</dd>
+              </div>
+              <div>
+                <dt>Focus</dt>
+                <dd>Information architecture, microcopy</dd>
+              </div>
+            </dl>
+            <button class="case-toggle" type="button" aria-expanded="false">
+              Read the case study
+            </button>
+            <div class="case-details" hidden>
+              <h4>Problem</h4>
+              <p>
+                Traditional recipe sites are overloaded with ads, life stories, and
+                2000-word intros. For people with anxiety or executive dysfunction,
+                this friction can be enough to make them skip cooking entirely.
+              </p>
+              <h4>Approach</h4>
+              <ul>
+                <li>Structured recipes as <strong>linear missions</strong> with clear checkpoints.</li>
+                <li>Used iconography and color to separate “prep”, “cook”, and “clean up”.</li>
+                <li>Wrote microcopy that is friendly but directive – no guilt, no fluff.</li>
+                <li>Ensured strong contrast, keyboard navigation, and readable typography.</li>
+              </ul>
+              <h4>Outcome & learnings</h4>
+              <p>
+                This project became a small UX playground for designing for
+                <strong>overwhelm reduction</strong>. It also helped me solidify front-end patterns
+                I now reuse in other projects.
+              </p>
+              <p class="case-links">
+                <span>Links:</span>
+                <a href="#" aria-disabled="true" class="link-disabled">Live demo (coming soon)</a>
+              </p>
+            </div>
+          </article>
+
+          <!-- Cute Weather -->
+          <article class="case-card">
+            <header>
+              <span class="case-label">Dev learning • UI</span>
+              <h3>Cute Weather Companion</h3>
+            </header>
+            <p class="case-summary">
+              A small weather app used as a playground to learn APIs, responsive layouts,
+              and motion – with a magical familiar cheering for you.
+            </p>
+            <dl class="case-meta-list">
+              <div>
+                <dt>Role</dt>
+                <dd>UI, frontend</dd>
+              </div>
+              <div>
+                <dt>Stack</dt>
+                <dd>HTML, CSS, JavaScript, OpenWeather API</dd>
+              </div>
+              <div>
+                <dt>Focus</dt>
+                <dd>Delightful micro-interactions</dd>
+              </div>
+            </dl>
+            <button class="case-toggle" type="button" aria-expanded="false">
+              Read the case study
+            </button>
+            <div class="case-details" hidden>
+              <h4>Goal</h4>
+              <p>
+                Practise consuming APIs, managing loading / error states, and
+                designing a simple UI that stays readable even when playful.
+              </p>
+              <h4>What I learned</h4>
+              <ul>
+                <li>How to structure small JS apps with clear responsibilities.</li>
+                <li>The importance of skeleton states and explicit error messaging.</li>
+                <li>Balancing fun visuals with accessibility requirements.</li>
+              </ul>
+              <p class="case-links">
+                <span>Links:</span>
+                <a href="https://vivisillusion.github.io/cute-wheather/" target="_blank" rel="noopener noreferrer">Live demo</a>
+                <span aria-hidden="true">•</span>
+                <a href="https://github.com/vivisillusion/cute-wheather" target="_blank" rel="noopener noreferrer">GitHub repo</a>
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEV LAB -->
+    <section id="dev-lab" class="section section--light">
+      <div class="shell">
+        <header class="section-header">
+          <h2>Dev lab</h2>
+          <p>Small experiments where I level up my coding skills, one bug at a time.</p>
+        </header>
+
+        <div class="dev-grid">
+          <article class="card dev-card">
+            <h3>Frontend foundations</h3>
+            <ul>
+              <li>freeCodeCamp – Legacy Responsive Web Design V8</li>
+              <li>Semantic HTML & accessible forms</li>
+              <li>CSS layout systems (Grid & Flexbox)</li>
+              <li>Basic JavaScript for UI behaviors</li>
+            </ul>
+          </article>
+
+          <article class="card dev-card">
+            <h3>Current learning quests</h3>
+            <ul>
+              <li>React + TypeScript basics</li>
+              <li>Design systems & reusable components</li>
+              <li>Better error states & edge-case thinking</li>
+              <li>Connecting UX research findings to UI decisions</li>
+            </ul>
+          </article>
+
+          <article class="card dev-card">
+            <h3>How I see code</h3>
+            <p>
+              I don’t pretend to be a senior engineer. I use code as a tool to prototype,
+              test hypotheses, and collaborate better with developers – while I bring
+              my strongest skills in communication, UX, and strategy.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section">
+      <div class="shell">
+        <header class="section-header">
+          <h2>Experience & education</h2>
+          <p>Where I’ve cast most of my spells so far.</p>
+        </header>
+
+        <div class="exp-grid">
+          <article class="card">
+            <h3>Corporate Communication Trainer</h3>
+            <p class="exp-meta">Freelance • 2015 – Present • São Paulo (Hybrid)</p>
+            <p>
+              In-company business English instruction for executives and managers in
+              multinational companies including BASF, Volkswagen, Mercedes-Benz, and C.Café.
+            </p>
+            <ul>
+              <li>Designed customized programs in corporate communication & negotiation.</li>
+              <li>Helped leaders present complex ideas clearly to global teams.</li>
+              <li>Developed executive-level workshops and case-based sessions.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Back Office – Tech Support (Mastercard)</h3>
+            <p class="exp-meta">Redire • 2018 – 2020</p>
+            <p>
+              Handled technical support tickets (Mastercard), protocol analysis and
+              problem resolution in systems, ensuring SLA compliance.
+            </p>
+            <ul>
+              <li>Used digital platforms for demand management and reporting.</li>
+              <li>Strengthened my love for clear processes and edge-case thinking.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Coordinator – Educational Programs</h3>
+            <p class="exp-meta">Yázigi • 2019 – 2020</p>
+            <p>
+              Coordinated educational programs and managed a team of 15+ instructors.
+              Streamlined curriculum development, aligned teaching staff and management,
+              and ensured program quality.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Education</h3>
+            <ul>
+              <li><strong>BSc, Computer Engineering</strong> – FMU | FIAM-FAAM (2023–)</li>
+              <li><strong>Licenciatura em Artes</strong> – ETEP (2022–2023)</li>
+              <li><strong>Licenciatura em Letras – Inglês</strong> – Braz Cubas (2020)</li>
+            </ul>
+            <h4>Selected certifications</h4>
+            <ul>
+              <li>Legacy Responsive Web Design V8 – freeCodeCamp</li>
+              <li>Network Defense – Cisco</li>
+              <li>Google – Marketing & Data Fundamentals</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section section--light">
+      <div class="shell">
+        <header class="section-header">
+          <h2>Summon me</h2>
+          <p>For roles in Product, UX Research, UX Writing, or Technical Writing – remote, global.</p>
+        </header>
+
+        <div class="contact-grid">
+          <div class="card">
+            <h3>Let’s talk</h3>
+            <p>Best ways to reach me:</p>
+            <ul class="contact-list">
+              <li><strong>Email:</strong> <a href="mailto:vilusion@gmail.com">vilusion@gmail.com</a></li>
+              <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/viviane-furtado-727010142" target="_blank" rel="noopener noreferrer">/in/viviane-furtado</a></li>
+              <li><strong>GitHub:</strong> <a href="https://github.com/vivisillusion" target="_blank" rel="noopener noreferrer">@vivisillusion</a></li>
+            </ul>
+            <p>
+              I’m especially interested in teams that care about accessibility,
+              mental health, inclusive language, and clear documentation.
+            </p>
+          </div>
+
+          <form class="card contact-form" autocomplete="off">
+            <h3>Quick message (static demo)</h3>
+            <p class="contact-note">
+              This is a front-end demo only. You can still copy your message and send it by email.
+            </p>
+            <label class="field">
+              <span>Name</span>
+              <input type="text" name="name" placeholder="Your name" />
+            </label>
+            <label class="field">
+              <span>Email</span>
+              <input type="email" name="email" placeholder="you@example.com" />
+            </label>
+            <label class="field">
+              <span>How can I help?</span>
+              <textarea name="message" rows="4" placeholder="Short description of your project or role."></textarea>
+            </label>
+            <button type="submit" class="btn btn-primary btn-full">Copy message to clipboard</button>
+            <p class="form-status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell">
+      <p>Designed & coded with a little chaos by Viviane Furtado ✨</p>
+      <p class="footer-mini">This portfolio is intentionally playful, but every decision respects accessibility and UX clarity.</p>
     </div>
-  </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
